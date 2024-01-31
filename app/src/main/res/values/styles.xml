@@ -1,0 +1,15 @@
+<!-- res/values/styles.xml -->
+<resources>
+
+    <!-- Define el color rosa suave en la sección de recursos -->
+    <color name="colorRosaSuave">#FFC0CB</color>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/colorRosaSuave</item>
+        <item name="colorPrimaryDark">@color/colorRosaSuave</item>
+        <item name="colorAccent">@color/colorRosaSuave</item>
+    </style>
+
+</resources>
