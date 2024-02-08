@@ -2,6 +2,8 @@ package com.example.cuentacuentos
 
 import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cuentacuentos.R
@@ -45,4 +47,23 @@ class CuentoActivity : AppCompatActivity() {
         // Detener la reproducción del video al salir de la actividad
         videoView.stopPlayback()
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_video, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_search -> {
+
+                onBackPressed()
+                return true
+            }
+            R.id.action_audio -> {
+
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
 }

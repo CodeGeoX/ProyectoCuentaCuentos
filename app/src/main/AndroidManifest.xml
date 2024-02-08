@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CuentoActivity" />
+        <activity android:name=".JuegosActivity" />
+        <activity android:name=".JuegoSeleccionCerdos" />
+        <activity android:name=".JuegoCantidadCerdos" />
     </application>
 
 </manifest>

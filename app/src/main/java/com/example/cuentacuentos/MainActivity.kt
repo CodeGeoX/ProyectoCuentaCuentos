@@ -17,6 +17,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CuentoActivity::class.java)
             startActivity(intent)
         }
+
+        val btnJuegos: Button = findViewById(R.id.btnjuegos)
+        btnJuegos.setOnClickListener {
+            val intent = Intent(this, JuegosActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
