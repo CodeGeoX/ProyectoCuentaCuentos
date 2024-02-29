@@ -10,12 +10,11 @@
         android:src="@drawable/wallpapergrass"
         android:scaleType="centerCrop"
         android:alpha="0.5"/>
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quants porquets hi ha en el conte?"
+        android:text="Quin animal fa aquest soroll?"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,34 +24,36 @@
         app:layout_constraintVertical_bias="0.129" />
 
     <ImageView
-        android:id="@+id/imageUnCerdo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/imageagila"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageDosCerdos"
+
+        app:layout_constraintEnd_toStartOf="@+id/imageserpiente"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/onepig" />
+        app:srcCompat="@drawable/agila" />
 
     <ImageView
-        android:id="@+id/imageDosCerdos"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/imageserpiente"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/twopigs" />
+        app:srcCompat="@drawable/serpiente" />
 
     <ImageView
-        android:id="@+id/imageTresCerdos"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/imagelobo"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageDosCerdos"
+
+        app:layout_constraintStart_toEndOf="@+id/imageserpiente"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/threepigs" />
+        app:srcCompat="@drawable/onewolf" />
 
     <ImageView
         android:id="@+id/wrong1"
@@ -61,7 +62,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="0.389"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.327"
@@ -74,10 +75,10 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.381"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344"
+        app:layout_constraintVertical_bias="0.331"
         app:srcCompat="@drawable/wrong" />
 
     <ImageView
@@ -90,6 +91,19 @@
         app:layout_constraintHorizontal_bias="0.762"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344"
+        app:layout_constraintVertical_bias="0.302"
         app:srcCompat="@drawable/correct" />
+
+    <ImageView
+        android:id="@+id/playsound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/volume"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099" />
 </androidx.constraintlayout.widget.ConstraintLayout>

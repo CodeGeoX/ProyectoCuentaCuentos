@@ -23,10 +23,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CuentoActivity" />
-        <activity android:name=".JuegosActivity" />
-        <activity android:name=".JuegoSeleccionCerdos" />
-        <activity android:name=".JuegoCantidadCerdos" />
+        <activity android:name=".CuentoActivity"
+            android:screenOrientation="landscape"
+        />
+        <activity android:name=".JuegosActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".JuegoCantidadCerdos"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".JuegoCantidadLobos"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".JuegoElegirDepredador"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".JuegoSonidoCerdo"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".JuegoSonidoLobo"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".MemoryGameActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".PaintActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".PaintView"
+            android:screenOrientation="landscape"
+            />
     </application>
 
 </manifest>

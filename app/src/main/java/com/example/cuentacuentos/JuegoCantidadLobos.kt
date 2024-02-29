@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
-class JuegoCantidadCerdos : AppCompatActivity() {
+class JuegoCantidadLobos : AppCompatActivity() {
 
     private lateinit var aciertoSound: MediaPlayer
     private lateinit var errorSound: MediaPlayer
@@ -18,51 +18,39 @@ class JuegoCantidadCerdos : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.juego_cantidad_cerdos)
+        setContentView(R.layout.juego_cantidad_lobos)
 
-        // Inicializar los MediaPlayer con los sonidos
         aciertoSound = MediaPlayer.create(this, R.raw.correctsound)
         errorSound = MediaPlayer.create(this, R.raw.wrongsound)
 
-        val imageTresCerdos: ImageView = findViewById(R.id.imageTresCerdos)
-        val imageUnCerdo: ImageView = findViewById(R.id.imageUnCerdo)
-        val imageDosCerdos: ImageView = findViewById(R.id.imageDosCerdos)
+        val imageTresLobos: ImageView = findViewById(R.id.ImageThreeWolves)
+        val imageUnLobo: ImageView = findViewById(R.id.ImageOneWolf)
+        val imageDosLobos: ImageView = findViewById(R.id.ImageTwoWolves)
         wrong1 = findViewById(R.id.wrong1)
         wrong2 = findViewById(R.id.wrong2)
         correct = findViewById(R.id.correct)
 
-        imageTresCerdos.setOnClickListener {
-            // Mostrar AlertDialog cuando el usuario acierte
-            mostrarAlertDialog("¡Correcto!", "¡Has adivinado! Hay tres cerditos.")
-            // Reproducir sonido de acierto
+        imageUnLobo.setOnClickListener {
+
+            mostrarAlertDialog("Correcte!", "Només hi ha un llop.")
             aciertoSound.start()
-            // Ocultar las imágenes incorrectas
             wrong1.visibility = View.GONE
             wrong2.visibility = View.GONE
-            // Mostrar la imagen correcta
             correct.visibility = View.VISIBLE
         }
 
-        imageUnCerdo.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
-            mostrarToast("¡Incorrecto! No hay solo un cerdito.")
-            // Reproducir sonido de error
+        imageTresLobos.setOnClickListener {
+            mostrarToast("¡Incorrecto! No hay solo un lobo.")
             errorSound.start()
-            // Mostrar la imagen incorrecta
             wrong1.visibility = View.VISIBLE
-            // Ocultar las otras imágenes
             wrong2.visibility = View.GONE
             correct.visibility = View.GONE
         }
 
-        imageDosCerdos.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
-            mostrarToast("¡Incorrecto! No hay solo dos cerditos.")
-            // Reproducir sonido de error
+        imageDosLobos.setOnClickListener {
+            mostrarToast("¡Incorrecto! No hay solo dos lobos.")
             errorSound.start()
-            // Mostrar la imagen incorrecta
             wrong2.visibility = View.VISIBLE
-            // Ocultar las otras imágenes
             wrong1.visibility = View.GONE
             correct.visibility = View.GONE
         }
@@ -70,7 +58,6 @@ class JuegoCantidadCerdos : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        // Liberar recursos de los MediaPlayer
         aciertoSound.release()
         errorSound.release()
     }
@@ -90,4 +77,3 @@ class JuegoCantidadCerdos : AppCompatActivity() {
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
     }
 }
-
