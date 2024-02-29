@@ -1,5 +1,8 @@
 package com.example.cuentacuentos
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
@@ -15,10 +18,14 @@ class JuegoElegirDepredador : AppCompatActivity() {
     private lateinit var wrong1: ImageView
     private lateinit var wrong2: ImageView
     private lateinit var correct: ImageView
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_elegir_depredador)
+
+        // Inicializar SharedPreferences
+        sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
 
         // Inicializar los MediaPlayer con los sonidos
         aciertoSound = MediaPlayer.create(this, R.raw.correctsound)
@@ -33,7 +40,7 @@ class JuegoElegirDepredador : AppCompatActivity() {
 
         imageEagle.setOnClickListener {
             // Mostrar Toast cuando el usuario se equivoque
-            mostrarToast("¡Incorrecto! El águila no es el depredador correcto.")
+            mostrarToast("Incorrecte! L'àguila no és el depredador correcte.")
             // Reproducir sonido de error
             errorSound.start()
             // Mostrar la imagen incorrecta
@@ -44,16 +51,20 @@ class JuegoElegirDepredador : AppCompatActivity() {
         }
 
         imageWolf.setOnClickListener {
+            // Mostrar AlertDialog cuando el usuario acierte
             mostrarAlertDialog("Correcte!", "El llop és el depredador correcte.")
+            // Reproducir sonido de acierto
             aciertoSound.start()
+            // Ocultar las imágenes incorrectas
             wrong1.visibility = View.GONE
             wrong2.visibility = View.GONE
+            // Mostrar la imagen correcta
             correct.visibility = View.VISIBLE
         }
 
         imageSnake.setOnClickListener {
             // Mostrar Toast cuando el usuario se equivoque
-            mostrarToast("¡Incorrecto! La serpiente no es el depredador correcto.")
+            mostrarToast("Incorrecte! La serp no és el depredador correcte")
             // Reproducir sonido de error
             errorSound.start()
             // Mostrar la imagen incorrecta
@@ -76,6 +87,12 @@ class JuegoElegirDepredador : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, _ ->
+            // Guardar la victoria del juego 4 en SharedPreferences
+            sharedPreferences.edit().putBoolean("victoria_juego_4", true).apply()
+            // Iniciar la actividad JuegosActivity
+            val intent = Intent(this, JuegosActivity::class.java)
+            startActivity(intent)
+            finish() // Cerrar la actividad actual
             dialog.dismiss()
         }
         val alertDialog = alertDialogBuilder.create()

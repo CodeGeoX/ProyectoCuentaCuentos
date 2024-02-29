@@ -10,23 +10,24 @@
         android:src="@drawable/wallpapergrass"
         android:scaleType="centerCrop"
         android:alpha="0.5"/>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quin animal fa aquest soroll?"
-        android:textSize="35dp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.134" />
 
     <ImageView
         android:id="@+id/onepig"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toStartOf="@+id/imageserpiente"
@@ -36,8 +37,8 @@
 
     <ImageView
         android:id="@+id/imageserpiente"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +47,8 @@
 
     <ImageView
         android:id="@+id/imageagila"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -93,10 +94,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.344"
         app:srcCompat="@drawable/correct" />
+
     <ImageView
         android:id="@+id/playsound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/volume"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -22,6 +22,10 @@ class PaintActivity : AppCompatActivity() {
         setContentView(R.layout.paintlayout)
         supportActionBar?.hide()
 
+
+        val sharedPreferences = getSharedPreferences("Juegos", MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean("victoria_juego_1", true).apply()
+
         val redBtn = findViewById<ImageButton>(R.id.redColor)
         val blueBtn = findViewById<ImageButton>(R.id.blueColor)
         val blackBtn = findViewById<ImageButton>(R.id.blackColor)

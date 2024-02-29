@@ -3,22 +3,46 @@ package com.example.cuentacuentos
 import android.media.AudioManager
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.SeekBar
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 
 class CuentoActivity : AppCompatActivity() {
     private lateinit var videoView: VideoView
+    private lateinit var videoSeekBar: SeekBar
     private var isMuted = false
+    private val handler = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cuento_view)
 
         videoView = findViewById(R.id.videoView)
+        videoSeekBar = findViewById(R.id.videoSeekBar)
         val videoUri = Uri.parse("android.resource://" + packageName + "/" + R.raw.evilgoblin)
         videoView.setVideoURI(videoUri)
+
+        videoView.setOnPreparedListener { mediaPlayer ->
+            videoSeekBar.max = videoView.duration
+            updateSeekBar()
+        }
+
+        videoView.start()
+
+        videoSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (fromUser) {
+                    videoView.seekTo(progress)
+                }
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
 
         videoView.setOnClickListener {
             if (videoView.isPlaying) {
@@ -27,9 +51,16 @@ class CuentoActivity : AppCompatActivity() {
                 videoView.start()
             }
         }
-
-        videoView.start()
     }
+
+    private fun updateSeekBar() {
+        if (!isFinishing) {
+            videoSeekBar.progress = videoView.currentPosition
+            handler.postDelayed({ updateSeekBar() }, 100)
+        }
+    }
+
+
 
     override fun onPause() {
         super.onPause()
@@ -75,5 +106,10 @@ class CuentoActivity : AppCompatActivity() {
             )
             isMuted = false
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacksAndMessages(null) // Ensure we're not leaking any callbacks
     }
 }

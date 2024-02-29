@@ -1,14 +1,16 @@
 package com.example.cuentacuentos
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
-import android.widget.Toast
 import java.util.*
 
 class JuegoSonidoCerdo : AppCompatActivity() {
@@ -16,10 +18,14 @@ class JuegoSonidoCerdo : AppCompatActivity() {
     private lateinit var wrong1: AppCompatImageView
     private lateinit var wrong2: AppCompatImageView
     private lateinit var correct: AppCompatImageView
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_sonido_cerdo)
+
+        // Inicializar SharedPreferences
+        sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
 
         // Inicializar los elementos de la interfaz
         val playImageView: ImageView = findViewById(R.id.playsound)
@@ -30,32 +36,41 @@ class JuegoSonidoCerdo : AppCompatActivity() {
         wrong2 = findViewById(R.id.wrong2)
         correct = findViewById(R.id.correct)
 
-        // Establecer el listener para el botón de reproducir sonidos
-
         // Establecer el listener para las imágenes de los cerdos
         val imageCerdo: ImageView = findViewById(R.id.onepig)
         val imageserpiente: ImageView = findViewById(R.id.imageserpiente)
         val imageAgila: ImageView = findViewById(R.id.imageagila)
 
         imageCerdo.setOnClickListener {
-            mostrarAlertDialog("¡Correcto!", "¡Has adivinado! Hay tres cerditos.")
+            // Mostrar AlertDialog cuando el usuario acierte
+            mostrarAlertDialog("Correcte!", "Hi ha tres porquets")
+            // Reproducir sonido de acierto
             aciertoSound()
+            // Ocultar imágenes incorrectas y mostrar la correcta
             ocultarImagenesIncorrectas()
             correct.visibility = View.VISIBLE
         }
 
         imageserpiente.setOnClickListener {
-            mostrarToast("¡Incorrecto! No hay solo un cerdito.")
+            // Mostrar Toast cuando el usuario se equivoque
+            mostrarToast("Incorrecte! Intenta-ho un altre cop")
+            // Reproducir sonido de error
             errorSound()
+            // Mostrar imagen incorrecta
             wrong1.visibility = View.VISIBLE
+            // Ocultar otras imágenes
             wrong2.visibility = View.GONE
             correct.visibility = View.GONE
         }
 
         imageAgila.setOnClickListener {
-            mostrarToast("¡Incorrecto! No hay solo dos cerditos.")
+            // Mostrar Toast cuando el usuario se equivoque
+            mostrarToast("Incorrecte! Intenta-ho un altre cop")
+            // Reproducir sonido de error
             errorSound()
+            // Mostrar imagen incorrecta
             wrong2.visibility = View.VISIBLE
+            // Ocultar otras imágenes
             wrong1.visibility = View.GONE
             correct.visibility = View.GONE
         }
@@ -90,7 +105,14 @@ class JuegoSonidoCerdo : AppCompatActivity() {
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
-        alertDialogBuilder.setPositiveButton("Aceptar", null)
+        alertDialogBuilder.setPositiveButton("Aceptar") { dialog, which ->
+            // Guardar la victoria del juego 5 en SharedPreferences
+            sharedPreferences.edit().putBoolean("victoria_juego_5", true).apply()
+            // Volver a la actividad JuegosActivity
+            val intent = Intent(this, JuegosActivity::class.java)
+            startActivity(intent)
+            finish() // Cerrar la actividad actual
+        }
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
