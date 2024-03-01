@@ -7,34 +7,77 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/mainwallpaper"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/mainwallpaper" />
 
-    <Button
+    <ImageView
         android:id="@+id/btncuento"
         android:layout_width="145dp"
         android:layout_height="145dp"
-        android:text="Mostrar Cuento"
+        android:src="@drawable/book"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221" />
+        app:layout_constraintVertical_bias="0.638" />
 
-    <Button
+    <ImageView
         android:id="@+id/btnjuegos"
         android:layout_width="145dp"
         android:layout_height="145dp"
-        android:layout_marginTop="8dp"
-        android:text="Jugar juegos"
+        android:src="@drawable/playbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintStart_toEndOf="@+id/btncuento"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.639" />
+
+    <TextView
+        android:id="@+id/tvTitol"
+        android:layout_width="844dp"
+        android:layout_height="156dp"
+        android:text="Els tres porquets"
+        android:textSize="110sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.263" />
+
+    <TextView
+        android:id="@+id/tvJocs"
+        android:layout_width="141dp"
+        android:layout_height="92dp"
+        android:text="Jocs"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnjuegos"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvConte"
+        android:layout_width="168dp"
+        android:layout_height="97dp"
+        android:layout_marginEnd="232dp"
+        android:text="Conte"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/tvJocs"
+        app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btncuento"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

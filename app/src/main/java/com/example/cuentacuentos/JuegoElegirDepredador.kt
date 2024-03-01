@@ -24,10 +24,8 @@ class JuegoElegirDepredador : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_elegir_depredador)
 
-        // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
 
-        // Inicializar los MediaPlayer con los sonidos
         aciertoSound = MediaPlayer.create(this, R.raw.correctsound)
         errorSound = MediaPlayer.create(this, R.raw.wrongsound)
 
@@ -39,37 +37,25 @@ class JuegoElegirDepredador : AppCompatActivity() {
         correct = findViewById(R.id.correct)
 
         imageEagle.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Incorrecte! L'àguila no és el depredador correcte.")
-            // Reproducir sonido de error
             errorSound.start()
-            // Mostrar la imagen incorrecta
             wrong1.visibility = View.VISIBLE
-            // Ocultar las otras imágenes
             wrong2.visibility = View.GONE
             correct.visibility = View.GONE
         }
 
         imageWolf.setOnClickListener {
-            // Mostrar AlertDialog cuando el usuario acierte
             mostrarAlertDialog("Correcte!", "El llop és el depredador correcte.")
-            // Reproducir sonido de acierto
             aciertoSound.start()
-            // Ocultar las imágenes incorrectas
             wrong1.visibility = View.GONE
             wrong2.visibility = View.GONE
-            // Mostrar la imagen correcta
             correct.visibility = View.VISIBLE
         }
 
         imageSnake.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Incorrecte! La serp no és el depredador correcte")
-            // Reproducir sonido de error
             errorSound.start()
-            // Mostrar la imagen incorrecta
             wrong2.visibility = View.VISIBLE
-            // Ocultar las otras imágenes
             wrong1.visibility = View.GONE
             correct.visibility = View.GONE
         }
@@ -77,7 +63,6 @@ class JuegoElegirDepredador : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        // Liberar recursos de los MediaPlayer
         aciertoSound.release()
         errorSound.release()
     }
@@ -87,12 +72,10 @@ class JuegoElegirDepredador : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, _ ->
-            // Guardar la victoria del juego 4 en SharedPreferences
             sharedPreferences.edit().putBoolean("victoria_juego_4", true).apply()
-            // Iniciar la actividad JuegosActivity
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)
-            finish() // Cerrar la actividad actual
+            finish()
             dialog.dismiss()
         }
         val alertDialog = alertDialogBuilder.create()

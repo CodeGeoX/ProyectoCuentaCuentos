@@ -24,7 +24,6 @@ class JuegoSonidoLobo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_sonido_lobo)
 
-        // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
 
         val playImageView: ImageView = findViewById(R.id.playsound)
@@ -40,35 +39,24 @@ class JuegoSonidoLobo : AppCompatActivity() {
         val imageAgila: ImageView = findViewById(R.id.imageagila)
 
         imageLobo.setOnClickListener {
-            // Mostrar AlertDialog cuando el usuario acierte
-            mostrarAlertDialog("Correcte!", "Ho has endevinat!, hi ha tres porquets")
-            // Reproducir sonido de acierto
+            mostrarAlertDialog("Correcte!", "Ho fa el llop")
             aciertoSound()
-            // Ocultar imágenes incorrectas y mostrar la correcta
             ocultarImagenesIncorrectas()
             correct.visibility = View.VISIBLE
         }
 
         imageserpiente.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Incorrecte! Intenta-ho un altre cop")
-            // Reproducir sonido de error
             errorSound()
-            // Mostrar imagen incorrecta
             wrong1.visibility = View.VISIBLE
-            // Ocultar otras imágenes
             wrong2.visibility = View.GONE
             correct.visibility = View.GONE
         }
 
         imageAgila.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Incorrecte! Intenta-ho un altre cop")
-            // Reproducir sonido de error
             errorSound()
-            // Mostrar imagen incorrecta
             wrong2.visibility = View.VISIBLE
-            // Ocultar otras imágenes
             wrong1.visibility = View.GONE
             correct.visibility = View.GONE
         }
@@ -104,12 +92,10 @@ class JuegoSonidoLobo : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, which ->
-            // Guardar la victoria del juego 6 en SharedPreferences
             sharedPreferences.edit().putBoolean("victoria_juego_6", true).apply()
-            // Volver a la actividad JuegosActivity
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)
-            finish() // Cerrar la actividad actual
+            finish()
         }
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()

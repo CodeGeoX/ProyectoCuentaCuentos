@@ -24,10 +24,8 @@ class JuegoSonidoCerdo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_sonido_cerdo)
 
-        // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
 
-        // Inicializar los elementos de la interfaz
         val playImageView: ImageView = findViewById(R.id.playsound)
         playImageView.setOnClickListener {
             playRandomSound()
@@ -36,41 +34,29 @@ class JuegoSonidoCerdo : AppCompatActivity() {
         wrong2 = findViewById(R.id.wrong2)
         correct = findViewById(R.id.correct)
 
-        // Establecer el listener para las imágenes de los cerdos
         val imageCerdo: ImageView = findViewById(R.id.onepig)
         val imageserpiente: ImageView = findViewById(R.id.imageserpiente)
         val imageAgila: ImageView = findViewById(R.id.imageagila)
 
         imageCerdo.setOnClickListener {
-            // Mostrar AlertDialog cuando el usuario acierte
-            mostrarAlertDialog("Correcte!", "Hi ha tres porquets")
-            // Reproducir sonido de acierto
+            mostrarAlertDialog("Correcte!", "Ho fa el porquet")
             aciertoSound()
-            // Ocultar imágenes incorrectas y mostrar la correcta
             ocultarImagenesIncorrectas()
             correct.visibility = View.VISIBLE
         }
 
         imageserpiente.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Incorrecte! Intenta-ho un altre cop")
-            // Reproducir sonido de error
             errorSound()
-            // Mostrar imagen incorrecta
             wrong1.visibility = View.VISIBLE
-            // Ocultar otras imágenes
             wrong2.visibility = View.GONE
             correct.visibility = View.GONE
         }
 
         imageAgila.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Incorrecte! Intenta-ho un altre cop")
-            // Reproducir sonido de error
             errorSound()
-            // Mostrar imagen incorrecta
             wrong2.visibility = View.VISIBLE
-            // Ocultar otras imágenes
             wrong1.visibility = View.GONE
             correct.visibility = View.GONE
         }
@@ -106,12 +92,10 @@ class JuegoSonidoCerdo : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, which ->
-            // Guardar la victoria del juego 5 en SharedPreferences
             sharedPreferences.edit().putBoolean("victoria_juego_5", true).apply()
-            // Volver a la actividad JuegosActivity
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)
-            finish() // Cerrar la actividad actual
+            finish()
         }
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()

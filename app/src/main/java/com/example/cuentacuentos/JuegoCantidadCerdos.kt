@@ -26,10 +26,8 @@ class JuegoCantidadCerdos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_cantidad_cerdos)
 
-        // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
 
-        // Inicializar los MediaPlayer con los sonidos
         aciertoSound = MediaPlayer.create(this, R.raw.correctsound)
         errorSound = MediaPlayer.create(this, R.raw.wrongsound)
 
@@ -41,37 +39,25 @@ class JuegoCantidadCerdos : AppCompatActivity() {
         correct = findViewById(R.id.correct)
 
         imageTresCerdos.setOnClickListener {
-            // Mostrar AlertDialog cuando el usuario acierte
             mostrarAlertDialog("Correcte!", "Hi ha tres porquets!")
-            // Reproducir sonido de acierto
             aciertoSound.start()
-            // Ocultar las imágenes incorrectas
             wrong1.visibility = View.GONE
             wrong2.visibility = View.GONE
-            // Mostrar la imagen correcta
             correct.visibility = View.VISIBLE
         }
 
         imageUnCerdo.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Uh-Oh Intenta-ho un altre cop")
-            // Reproducir sonido de error
             errorSound.start()
-            // Mostrar la imagen incorrecta
             wrong1.visibility = View.VISIBLE
-            // Ocultar las otras imágenes
             wrong2.visibility = View.GONE
             correct.visibility = View.GONE
         }
 
         imageDosCerdos.setOnClickListener {
-            // Mostrar Toast cuando el usuario se equivoque
             mostrarToast("Uh-Oh Intenta-ho un altre cop")
-            // Reproducir sonido de error
             errorSound.start()
-            // Mostrar la imagen incorrecta
             wrong2.visibility = View.VISIBLE
-            // Ocultar las otras imágenes
             wrong1.visibility = View.GONE
             correct.visibility = View.GONE
         }
@@ -79,7 +65,6 @@ class JuegoCantidadCerdos : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        // Liberar recursos de los MediaPlayer
         aciertoSound.release()
         errorSound.release()
     }

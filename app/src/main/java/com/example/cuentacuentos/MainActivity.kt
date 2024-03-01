@@ -6,19 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.VideoView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btncuento: Button = findViewById(R.id.btncuento)
+        val btncuento: ImageView = findViewById(R.id.btncuento)
         btncuento.setOnClickListener {
             val intent = Intent(this, CuentoActivity::class.java)
             startActivity(intent)
         }
 
-        val btnJuegos: Button = findViewById(R.id.btnjuegos)
+        val btnJuegos: ImageView = findViewById(R.id.btnjuegos)
         btnJuegos.setOnClickListener {
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)

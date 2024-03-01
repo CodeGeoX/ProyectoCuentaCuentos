@@ -110,6 +110,6 @@ class CuentoActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        handler.removeCallbacksAndMessages(null) // Ensure we're not leaking any callbacks
+        handler.removeCallbacksAndMessages(null)
     }
 }

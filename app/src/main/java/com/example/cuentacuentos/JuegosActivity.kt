@@ -17,10 +17,8 @@ class JuegosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_main)
 
-        // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
 
-        // Mostrar las estrellas correspondientes para cada juego
         mostrarEstrellaCompletado(R.id.stargame1empty, R.id.stargame1full, "victoria_juego_1")
         mostrarEstrellaCompletado(R.id.stargame2empty, R.id.stargame2full, "victoria_juego_2")
         mostrarEstrellaCompletado(R.id.stargame3empty, R.id.stargame3full, "victoria_juego_3")
@@ -30,7 +28,6 @@ class JuegosActivity : AppCompatActivity() {
         mostrarEstrellaCompletado(R.id.stargame7empty, R.id.stargame7full, "victoria_juego_7")
 
 
-        // Setear OnClickListener para cada juego
         val game1: Button = findViewById(R.id.game1)
         game1.setOnClickListener {
             val intent = Intent(this, PaintActivity::class.java)
@@ -74,9 +71,7 @@ class JuegosActivity : AppCompatActivity() {
     }
 
     private fun mostrarEstrellaCompletado(idEstrellaEmpty: Int, idEstrellaFull: Int, claveSharedPreferences: String) {
-        // Verificar si el juego ha sido completado en SharedPreferences
         val completado = sharedPreferences.getBoolean(claveSharedPreferences, false)
-        // Mostrar estrella correspondiente
         if (completado) {
             findViewById<ImageView>(idEstrellaEmpty).visibility = View.GONE
             findViewById<ImageView>(idEstrellaFull).visibility = View.VISIBLE

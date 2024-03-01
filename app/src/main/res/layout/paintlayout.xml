@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="@color/colorRosaSuave"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -22,11 +22,46 @@
             android:background="@drawable/red_background"/>
 
         <ImageButton
+            android:id="@+id/orangeColor"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/orange_background"/>
+
+        <ImageButton
+            android:id="@+id/yellowColor"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/yellow_background"/>
+
+        <ImageButton
+            android:id="@+id/greenColor"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/green_background"/>
+
+        <ImageButton
             android:id="@+id/blueColor"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
             android:background="@drawable/blue_background"/>
+
+        <ImageButton
+            android:id="@+id/purpleColor"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/purple_background"/>
+
+        <ImageButton
+            android:id="@+id/pinkColor"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/pink_background"/>
 
         <ImageButton
             android:id="@+id/blackColor"

@@ -16,111 +16,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.501" />
 
-        <Button
-            android:id="@+id/game1"
-            style="@style/CircularButton1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="126dp"
-            android:text="1"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.139" />
-
-        <Button
-            android:id="@+id/game3"
-            style="@style/CircularButton3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="126dp"
-            android:text="3"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.14" />
-
-        <Button
-            android:id="@+id/game4"
-            style="@style/CircularButton4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="126dp"
-            android:text="4"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.553" />
-
-        <Button
-            android:id="@+id/game5"
-            style="@style/CircularButton5"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="126dp"
-            android:text="5"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.455"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.553" />
-
-        <Button
-            android:id="@+id/game6"
-            style="@style/CircularButton6"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="126dp"
-            android:text="6"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.553" />
-
-        <Button
-            android:id="@+id/game7"
-            style="@style/CircularButton7"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="126dp"
-            android:text="7"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.45"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.965" />
-
-        <Button
-            android:id="@+id/game2"
-            style="@style/CircularButton2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="126dp"
-            android:text="2"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.455"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.14" />
-
 
     <ImageView
         android:id="@+id/imageView7"
@@ -129,8 +24,263 @@
         android:alpha="0.5"
         android:scaleType="centerCrop"
         android:src="@drawable/wallpapergrass"
-        tools:layout_editor_absoluteX="-283dp"
-        tools:layout_editor_absoluteY="115dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-44dp" />
+
+    <Button
+        android:id="@+id/game2"
+        style="@style/CircularButton2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:text="2"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <Button
+        android:id="@+id/game5"
+        style="@style/CircularButton5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:text="5"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+    <Button
+        android:id="@+id/game4"
+        style="@style/CircularButton4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:text="4"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+    <ImageView
+        android:id="@+id/stargame6empty"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/star_border" />
+
+    <ImageView
+        android:id="@+id/stargame5empty"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/star_border" />
+
+    <ImageView
+        android:id="@+id/stargame4empty"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/star_border" />
+
+    <Button
+        android:id="@+id/game6"
+        style="@style/CircularButton6"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:text="6"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+    <Button
+        android:id="@+id/game7"
+        style="@style/CircularButton7"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:text="7"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
+
+    <ImageView
+        android:id="@+id/stargame7empty"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        app:srcCompat="@drawable/star_border" />
+
+    <Button
+        android:id="@+id/game3"
+        style="@style/CircularButton3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:text="3"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <Button
+        android:id="@+id/game1"
+        style="@style/CircularButton1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="126dp"
+        android:text="1"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <ImageView
+        android:id="@+id/stargame1empty"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        app:srcCompat="@drawable/star_border" />
+
+    <ImageView
+        android:id="@+id/stargame3empty"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        app:srcCompat="@drawable/star_border" />
+
+    <ImageView
+        android:id="@+id/stargame3full"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        app:srcCompat="@drawable/star_fill" />
+
+    <ImageView
+        android:id="@+id/stargame5full"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/star_fill" />
+
+    <ImageView
+        android:id="@+id/stargame1full"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        app:srcCompat="@drawable/star_fill" />
+
+    <ImageView
+        android:id="@+id/stargame4full"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/star_fill" />
+
+    <ImageView
+        android:id="@+id/stargame7full"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887"
+        app:srcCompat="@drawable/star_fill" />
+
+    <ImageView
+        android:id="@+id/stargame6full"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/star_fill" />
 
     <ImageView
         android:id="@+id/stargame2empty"
@@ -141,19 +291,7 @@
         app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
-        app:srcCompat="@drawable/star_border" />
-
-    <ImageView
-        android:id="@+id/stargame1empty"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
+        app:layout_constraintVertical_bias="0.331"
         app:srcCompat="@drawable/star_border" />
 
     <ImageView
@@ -166,144 +304,20 @@
         app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
+        app:layout_constraintVertical_bias="0.331"
         app:srcCompat="@drawable/star_fill" />
 
-    <ImageView
-        android:id="@+id/stargame3empty"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="254dp"
+        android:layout_height="138dp"
+        android:text="Jocs"
+        android:textSize="110sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.702"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
-        app:srcCompat="@drawable/star_border" />
-
-    <ImageView
-        android:id="@+id/stargame3full"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.702"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
-        app:srcCompat="@drawable/star_fill" />
-
-    <ImageView
-        android:id="@+id/stargame5empty"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554"
-        app:srcCompat="@drawable/star_border" />
-
-    <ImageView
-        android:id="@+id/stargame5full"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554"
-        app:srcCompat="@drawable/star_fill" />
-
-    <ImageView
-        android:id="@+id/stargame1full"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
-        app:srcCompat="@drawable/star_fill" />
-
-    <ImageView
-        android:id="@+id/stargame4empty"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/star_border" />
-
-    <ImageView
-        android:id="@+id/stargame4full"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/star_fill" />
-
-    <ImageView
-        android:id="@+id/stargame7empty"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935"
-        app:srcCompat="@drawable/star_border" />
-
-    <ImageView
-        android:id="@+id/stargame7full"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935"
-        app:srcCompat="@drawable/star_fill" />
-
-    <ImageView
-        android:id="@+id/stargame6empty"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.702"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/star_border" />
-
-    <ImageView
-        android:id="@+id/stargame6full"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.702"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/star_fill" />
+        app:layout_constraintVertical_bias="0.024"
+        tools:textStyle="bold" />
 </androidx.constraintlayout.widget.ConstraintLayout>
