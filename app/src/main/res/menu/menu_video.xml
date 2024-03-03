@@ -12,4 +12,10 @@
         android:icon="@drawable/audio"
         android:title="Settings"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_language"
+        android:title="Language"
+        app:showAsAction="always"
+        android:icon="@drawable/language_icon"/>
 </menu>

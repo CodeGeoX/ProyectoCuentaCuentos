@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
 import android.widget.VideoView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class CuentoActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class CuentoActivity : AppCompatActivity() {
 
         videoView = findViewById(R.id.videoView)
         videoSeekBar = findViewById(R.id.videoSeekBar)
-        val videoUri = Uri.parse("android.resource://" + packageName + "/" + R.raw.evilgoblin)
+        val videoUri = Uri.parse("android.resource://" + packageName + "/" + R.raw.tresporcscatala)
         videoView.setVideoURI(videoUri)
 
         videoView.setOnPreparedListener { mediaPlayer ->
@@ -89,10 +90,31 @@ class CuentoActivity : AppCompatActivity() {
                 toggleAudio()
                 true
             }
+            R.id.action_language -> {
+                showLanguageDialog()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+    private fun showLanguageDialog() {
+        val languages = arrayOf("Català", "Castellà", "Àrab")
+        val videoUrls = arrayOf(
+            R.raw.tresporcscatala,
+            R.raw.tresporcscast,
+            R.raw.tresporcsarab
+        )
 
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Select Language")
+        builder.setItems(languages) { dialog, which ->
+            val videoUri = Uri.parse("android.resource://" + packageName + "/" + videoUrls[which])
+            videoView.setVideoURI(videoUri)
+            videoView.start()
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
     private fun toggleAudio() {
         val audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
         if (!isMuted) {
