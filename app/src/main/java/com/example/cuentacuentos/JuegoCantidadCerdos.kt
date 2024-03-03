@@ -25,9 +25,9 @@ class JuegoCantidadCerdos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_cantidad_cerdos)
-
+        //se prepara sharedpreferences para almacenar si se ha completado el juego o no.
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
-
+        // se preparan los sonidos de error o acierto
         aciertoSound = MediaPlayer.create(this, R.raw.correctsound)
         errorSound = MediaPlayer.create(this, R.raw.wrongsound)
 
@@ -38,6 +38,7 @@ class JuegoCantidadCerdos : AppCompatActivity() {
         wrong2 = findViewById(R.id.wrong2)
         correct = findViewById(R.id.correct)
 
+        //dependiendo de la imagen que se seleccione dará un resultado o otro, acabando el juego o continuandolo.
         imageTresCerdos.setOnClickListener {
             mostrarAlertDialog("Correcte!", "Hi ha tres porquets!")
             aciertoSound.start()
@@ -62,7 +63,7 @@ class JuegoCantidadCerdos : AppCompatActivity() {
             correct.visibility = View.GONE
         }
     }
-
+    // el audio se libera una vez la actividad no se use
     override fun onDestroy() {
         super.onDestroy()
         aciertoSound.release()
@@ -74,6 +75,7 @@ class JuegoCantidadCerdos : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, _ ->
+            //Cuando se presione el botón de aceptar al ganar se guarda la victoria en sharedpreferences
             sharedPreferences.edit().putBoolean("victoria_juego_2", true).apply()
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)

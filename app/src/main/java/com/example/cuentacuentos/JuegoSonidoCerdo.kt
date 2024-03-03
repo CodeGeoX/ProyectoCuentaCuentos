@@ -23,9 +23,9 @@ class JuegoSonidoCerdo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_sonido_cerdo)
-
+        // se prepara sharedpreferences
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
-
+        // se prepara el sonido y si se presiona el botón hará que se escuche
         val playImageView: ImageView = findViewById(R.id.playsound)
         playImageView.setOnClickListener {
             playRandomSound()
@@ -62,6 +62,7 @@ class JuegoSonidoCerdo : AppCompatActivity() {
         }
     }
 
+    // Hay 3 sonidos para el cerdo, se selecciona uno aleatoriamente cada vez que se presiona el botón.
     private fun playRandomSound() {
         if (mediaPlayer != null && mediaPlayer!!.isPlaying) {
             mediaPlayer!!.stop()
@@ -92,6 +93,7 @@ class JuegoSonidoCerdo : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, which ->
+            //Cuando se presione el botón de aceptar al ganar se guarda la victoria en sharedpreferences
             sharedPreferences.edit().putBoolean("victoria_juego_5", true).apply()
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)

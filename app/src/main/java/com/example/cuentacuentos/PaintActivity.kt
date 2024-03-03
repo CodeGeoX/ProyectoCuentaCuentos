@@ -27,8 +27,10 @@ class PaintActivity : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences("Juegos", MODE_PRIVATE)
         sharedPreferences.edit().putBoolean("victoria_juego_1", true).apply()
+        //Como el juego de pintar no tiene manera de ser completado se le asigna el estado de completo nada mas entrar en este
 
         context = this
+        // prepara los colores
         val redBtn = findViewById<ImageButton>(R.id.redColor)
         val blueBtn = findViewById<ImageButton>(R.id.blueColor)
         val blackBtn = findViewById<ImageButton>(R.id.blackColor)

@@ -18,6 +18,7 @@ class JuegosActivity : AppCompatActivity() {
         setContentView(R.layout.juego_main)
 
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
+        // Muestra la estrella vacía o llena según si el juego está completado o no
 
         mostrarEstrellaCompletado(R.id.stargame1empty, R.id.stargame1full, "victoria_juego_1")
         mostrarEstrellaCompletado(R.id.stargame2empty, R.id.stargame2full, "victoria_juego_2")
@@ -27,7 +28,7 @@ class JuegosActivity : AppCompatActivity() {
         mostrarEstrellaCompletado(R.id.stargame6empty, R.id.stargame6full, "victoria_juego_6")
         mostrarEstrellaCompletado(R.id.stargame7empty, R.id.stargame7full, "victoria_juego_7")
 
-
+        // Opciones del menu para entrar a los juegos
         val game1: Button = findViewById(R.id.game1)
         game1.setOnClickListener {
             val intent = Intent(this, PaintActivity::class.java)
@@ -70,6 +71,7 @@ class JuegosActivity : AppCompatActivity() {
         }
     }
 
+    // dependiendo de si el juego está completado o no se mostrará la estrella vacía o la llena usando sharedpreferences.
     private fun mostrarEstrellaCompletado(idEstrellaEmpty: Int, idEstrellaFull: Int, claveSharedPreferences: String) {
         val completado = sharedPreferences.getBoolean(claveSharedPreferences, false)
         if (completado) {

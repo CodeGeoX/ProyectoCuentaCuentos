@@ -23,15 +23,17 @@ class CuentoActivity : AppCompatActivity() {
 
         videoView = findViewById(R.id.videoView)
         videoSeekBar = findViewById(R.id.videoSeekBar)
+
+        // Establece url de video predeterminada
         val videoUri = Uri.parse("android.resource://" + packageName + "/" + R.raw.tresporcscatala)
         videoView.setVideoURI(videoUri)
 
         videoView.setOnPreparedListener { mediaPlayer ->
-            videoSeekBar.max = videoView.duration
+            videoSeekBar.max = videoView.duration // Prepara la barra de progreso para el vídeo
             updateSeekBar()
         }
 
-        videoView.start()
+        videoView.start() // Inicia el video
 
         videoSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -45,6 +47,7 @@ class CuentoActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
+        // Listener para pausar y reanudar el vídeo
         videoView.setOnClickListener {
             if (videoView.isPlaying) {
                 videoView.pause()
@@ -54,6 +57,7 @@ class CuentoActivity : AppCompatActivity() {
         }
     }
 
+    // Método para actualizar la barra de progreso del video
     private fun updateSeekBar() {
         if (!isFinishing) {
             videoSeekBar.progress = videoView.currentPosition
@@ -61,12 +65,10 @@ class CuentoActivity : AppCompatActivity() {
         }
     }
 
-
-
     override fun onPause() {
         super.onPause()
         if (videoView.isPlaying) {
-            videoView.pause()
+            videoView.pause() // Pausar el video si está en marcha
         }
     }
 
@@ -75,11 +77,13 @@ class CuentoActivity : AppCompatActivity() {
         videoView.stopPlayback()
     }
 
+    // Método para preparar el menú de la toolbar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_video, menu)
         return true
     }
 
+    // Opciones de la toolbar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_search -> {
@@ -91,12 +95,13 @@ class CuentoActivity : AppCompatActivity() {
                 true
             }
             R.id.action_language -> {
-                showLanguageDialog()
+                showLanguageDialog() // Opciones para cambiar el idioma
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
     private fun showLanguageDialog() {
         val languages = arrayOf("Català", "Castellà", "Àrab")
         val videoUrls = arrayOf(
@@ -106,7 +111,7 @@ class CuentoActivity : AppCompatActivity() {
         )
 
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Select Language")
+        builder.setTitle("Selecciona l'idioma")
         builder.setItems(languages) { dialog, which ->
             val videoUri = Uri.parse("android.resource://" + packageName + "/" + videoUrls[which])
             videoView.setVideoURI(videoUri)
@@ -115,10 +120,13 @@ class CuentoActivity : AppCompatActivity() {
         val dialog = builder.create()
         dialog.show()
     }
+
+    // Método para activar o desactivar el audio del movil
     private fun toggleAudio() {
         val audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
         if (!isMuted) {
             audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0)
+            // para gestionar el mute del audio se baja el volumen del dispositivo al 0
             isMuted = true
         } else {
             audioManager.setStreamVolume(
@@ -130,6 +138,7 @@ class CuentoActivity : AppCompatActivity() {
         }
     }
 
+    // Método que se ejecuta cuando la actividad se acaba
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacksAndMessages(null)

@@ -25,7 +25,7 @@ class JuegoSonidoLobo : AppCompatActivity() {
         setContentView(R.layout.juego_sonido_lobo)
 
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
-
+        // se prepara el sonido y si se presiona el botón hará que se escuche
         val playImageView: ImageView = findViewById(R.id.playsound)
         playImageView.setOnClickListener {
             playRandomSound()
@@ -61,6 +61,7 @@ class JuegoSonidoLobo : AppCompatActivity() {
             correct.visibility = View.GONE
         }
     }
+    // Hay 3 sonidos para el lobo también, se selecciona uno aleatoriamente cada vez que se presiona el botón.
 
     private fun playRandomSound() {
         if (mediaPlayer != null && mediaPlayer!!.isPlaying) {
@@ -92,6 +93,7 @@ class JuegoSonidoLobo : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, which ->
+            //Cuando se presione el botón de aceptar al ganar se guarda la victoria en sharedpreferences
             sharedPreferences.edit().putBoolean("victoria_juego_6", true).apply()
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)

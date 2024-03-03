@@ -23,9 +23,9 @@ class JuegoCantidadLobos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.juego_cantidad_lobos)
-
+        //se prepara sharedpreferences para almacenar si se completa o abandona el juego
         sharedPreferences = getSharedPreferences("Juegos", Context.MODE_PRIVATE)
-
+        //se cargan los sonidos
         aciertoSound = MediaPlayer.create(this, R.raw.correctsound)
         errorSound = MediaPlayer.create(this, R.raw.wrongsound)
 
@@ -35,7 +35,7 @@ class JuegoCantidadLobos : AppCompatActivity() {
         wrong1 = findViewById(R.id.wrong1)
         wrong2 = findViewById(R.id.wrong2)
         correct = findViewById(R.id.correct)
-
+        // dependiendo de la imagen presionada se continua o acaba el juego.
         imageUnLobo.setOnClickListener {
             mostrarAlertDialog("Correcte!", "Només hi ha un llop.")
             aciertoSound.start()
@@ -72,6 +72,7 @@ class JuegoCantidadLobos : AppCompatActivity() {
         alertDialogBuilder.setTitle(titulo)
         alertDialogBuilder.setMessage(mensaje)
         alertDialogBuilder.setPositiveButton("Aceptar") { dialog, _ ->
+            //Cuando se presione el botón de aceptar al ganar se guarda la victoria en sharedpreferences
             sharedPreferences.edit().putBoolean("victoria_juego_3", true).apply()
             val intent = Intent(this, JuegosActivity::class.java)
             startActivity(intent)
