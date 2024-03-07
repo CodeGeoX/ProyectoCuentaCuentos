@@ -1,12 +1,14 @@
 package com.example.cuentacuentos
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import com.example.cuentacuentos.PaintView.Companion.colorList
 import com.example.cuentacuentos.PaintView.Companion.currentBrush
@@ -40,7 +42,11 @@ class PaintActivity : AppCompatActivity() {
         val pinkBtn = findViewById<ImageButton>(R.id.pinkColor)
         val purpleBtn = findViewById<ImageButton>(R.id.purpleColor)
         val eraser = findViewById<ImageButton>(R.id.eraser)
-
+        val backBtn = findViewById<ImageView>(R.id.back)
+        backBtn.setOnClickListener {
+            val intent = Intent(this, JuegosActivity::class.java)
+            startActivity(intent)
+        }
         redBtn.setOnClickListener {
             paintBrush.color = Color.RED
             currentColor(paintBrush.color)
